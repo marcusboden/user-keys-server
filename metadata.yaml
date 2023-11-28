@@ -1,0 +1,21 @@
+name: user-keys-server
+ 
+# The following metadata are human-readable and will be published prominently on Charmhub.
+
+display-name: user-keys-server
+
+summary: A webserver serving users and their ssh keys in json format
+
+description: |
+  This charm uses is a k8s charm setting up a small nginx web server to serve usernames and ssh-keys in json format.
+  It is meant to be used in conjunction with the [advanced-auth](https://charmhub.io/advanced-auth) charm, which pulls its users from a remote source. This charm is the remote source.
+
+containers:
+  nginx:
+    resource: nginx-image
+
+resources:
+  nginx-image:
+    type: oci-image
+    description: OCI image of nginx
+    upstream-source: nginx

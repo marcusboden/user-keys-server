@@ -1,0 +1,28 @@
+# This file defines charm config options, and populates the Configure tab on Charmhub.
+# If your charm does not require configuration options, delete this file entirely.
+#
+# See https://juju.is/docs/config for guidance.
+
+options:
+  # An example config option to customise the log level of the workload
+  users:
+    description: |
+      A yaml dictionary of users, in the following format
+      username1:
+        gecos: Name and other attributes
+        keys: 
+        - ssh-ed25519 XYZ username@machine
+        - ssh-rsa ABC username@machine
+      username2:
+        gecos: Other Name
+        keys:
+        - sk-ssh-ed25519@openssh.com DEF other@machine
+
+    default: ""
+    type: string
+  ssl_cert:
+    type: string
+    default: ""
+  ssl_key:
+    type: string
+    default: ""
